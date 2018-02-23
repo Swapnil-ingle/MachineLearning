@@ -8,7 +8,7 @@ import pandas as pd
 #importing the datasets
 dataset = pd.read_csv('Social_Network_Ads.csv')
 x = dataset.iloc[:,[2,3]].values
-y = dataset.iloc[:,4].values
+y = dataset.iloc[:,4].values 
 
 #Doing the train_test_split for the Datasets
 from sklearn.cross_validation import train_test_split 
@@ -32,8 +32,18 @@ y_pred=classifier.predict(x_test)
 from sklearn.metrics import confusion_matrix
 cm=confusion_matrix(y_test,y_pred)
 
+#printing the OUTPUT
+total=sum(sum(cm))
+right_pred=cm[1,1]+(cm[0,0])
+wrong_pred=cm[0,1]+(cm[1,0])
+acc=(right_pred/100*100)
+print("Accuracy= {} %".format(acc))
+print("Total predictions made: ",total)
+print("Number of right prediction: ",right_pred)
+print("Number of anomalous predicition:",wrong_pred)
 
-#Making a Frekin' Graph for TrainingSet
+
+#Making a Graph for TrainingSet
 from matplotlib.colors import ListedColormap
 x_set, y_set=x_train, y_train
 X1, X2= np.meshgrid(np.arange(start=x_set[:,0].min()-1,stop=x_set[:,0].max()+1,step=0.01),
