@@ -1,6 +1,6 @@
 # Machine Learning
 
-A machine learning algorithm that predicts if specific variety of cars will be sold to a demographic.
+A machine learning algorithm that predicts if specific variety of cars should be sold to what specific demographic.
 
 **Input variables:** 
 1. Gender
